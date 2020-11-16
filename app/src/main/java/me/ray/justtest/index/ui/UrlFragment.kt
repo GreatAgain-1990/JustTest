@@ -24,7 +24,7 @@ class UrlFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.home_frag_url_input, null)
+        val view = inflater.inflate(R.layout.frag_url_input, null)
         val btnSearch = view.findViewById<Button>(R.id.btnSearchUrl)
         val etInput = view.findViewById<EditText>(R.id.etInput)
         btnSearch.setOnClickListener {

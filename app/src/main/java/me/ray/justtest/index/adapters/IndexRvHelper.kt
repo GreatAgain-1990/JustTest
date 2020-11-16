@@ -9,7 +9,7 @@ import me.ray.justtest.R
  */
 object IndexRvHelper {
 
-    fun getItemLayout(viewType: Int) = R.layout.home_rv_item
+    fun getItemLayout(viewType: Int) = R.layout.item_index_list
 
 
 }

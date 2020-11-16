@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import me.ray.common.R
 import me.ray.common.model.Result
 import me.ray.common.viewmodel.BaseViewModel
-import me.ray.justtest.databinding.HomeRvItemBinding
+import me.ray.justtest.databinding.ItemIndexListBinding
 
 /**
  * Description: [me.ray.justtest.index.ui.IndexFragment]  Rv Adapter
@@ -65,8 +65,7 @@ class IndexRvAdapter(
 
         fun bind(item: Result) {
             when (binding) {
-
-                is HomeRvItemBinding -> {
+                is ItemIndexListBinding -> {
                     with(binding) {
                         result = item
                         viewModel = actionVM

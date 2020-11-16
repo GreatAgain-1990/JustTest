@@ -4,26 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
-import me.ray.common.databinding.FragmentRvWithFreshBinding
-import me.ray.common.model.RequestBean
-import me.ray.common.model.SearchArguments
-import me.ray.common.model.Variables
 import me.ray.common.ui.BaseFragment
+import me.ray.justtest.databinding.FragRvWithFreshBinding
 import me.ray.justtest.index.adapters.IndexRvAdapter
 import me.ray.justtest.index.viewmodels.IndexViewModel
 import me.ray.justtest.index.viewmodels.IndexViewModelFactory
 import me.ray.utils.logd
 import me.ray.utils.loge
-import me.ray.utils.logi
 import me.ray.utils.ui.decoration.MarginDecoration
-import okhttp3.MediaType
-import okhttp3.RequestBody
 
 /**
  * Description: 发现
@@ -35,14 +27,14 @@ class IndexFragment : BaseFragment() {
         IndexViewModelFactory.get(requireContext())
     }
 
-    private lateinit var binding: FragmentRvWithFreshBinding
+    private lateinit var binding: FragRvWithFreshBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return FragmentRvWithFreshBinding.inflate(inflater, container, false).run {
+        return FragRvWithFreshBinding.inflate(inflater, container, false).run {
             binding = this
             viewModel = this@IndexFragment.viewModel
             lifecycleOwner = viewLifecycleOwner
@@ -81,7 +73,7 @@ class IndexFragment : BaseFragment() {
 
     override fun fetchData() {
         binding.page = 1
-        viewModel.fetchData(binding.etSearch.text.toString(), binding.page)
+        viewModel.fetchData(binding.etSearch.text.toString(), 1)
     }
 
 
