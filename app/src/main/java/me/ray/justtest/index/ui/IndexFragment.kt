@@ -1,6 +1,7 @@
 package me.ray.justtest.index.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import me.ray.justtest.index.viewmodels.IndexViewModel
 import me.ray.justtest.index.viewmodels.IndexViewModelFactory
 import me.ray.utils.logd
 import me.ray.utils.loge
+import me.ray.utils.logi
 import me.ray.utils.ui.decoration.MarginDecoration
 
 /**
@@ -67,12 +69,21 @@ class IndexFragment : BaseFragment() {
                 (viewModel as IndexViewModel).fetchData(keywords,  page)
             }
 
+            binding.btnSearch.setOnClickListener {
+                fetchData()
+            }
+
+            binding.refreshLayout.setOnRefreshListener {
+                fetchData()
+            }
+
             root
         }
     }
 
     override fun fetchData() {
         binding.page = 1
+        logi(">>>>>>>>>page:${binding.page}")
         viewModel.fetchData(binding.etSearch.text.toString(), 1)
     }
 

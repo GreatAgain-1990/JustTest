@@ -45,7 +45,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="搜索"
-            app:OnClickListener="@{() -> viewModel.fetchData(keywords,page)}"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/etSearch"
             app:layout_constraintBottom_toBottomOf="@+id/etSearch"
@@ -59,7 +58,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etSearch"
-            app:onRefreshListener="@{() -> viewModel.fetchData(keywords,page)}"
             app:refreshing="@{viewModel.onRefreshing}">
 
             <me.ray.common.ui.view.BottomRecyclerView

@@ -8,7 +8,7 @@ import me.ray.common.db.MyDatabase
 import me.ray.justtest.index.repository.IndexRepository
 
 /**
- * Description: HomeViewModel工厂类
+ * Description: IndexViewModel工厂类
  * Author : ray
  */
 class IndexViewModelFactory(private val repository: IndexRepository) : ViewModelProvider.Factory {
