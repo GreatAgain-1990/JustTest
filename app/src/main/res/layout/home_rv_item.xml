@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="me.ray.common.viewmodel.BaseViewModel" />
+
+
+        <variable
+            name="result"
+            type="me.ray.common.model.Result" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:onClickListener="@{(theView) -> viewModel.jumpToC(theView, result.thumbnailSmall)}">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="@dimen/home_item_logo_size"
+            android:layout_height="@dimen/home_item_logo_size"
+            android:layout_margin="10dp"
+            android:src="@drawable/home_icon_latest"
+            app:cover="@{result.thumbnailSmall}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <me.ray.common.ui.view.FontTextView
+            android:id="@+id/tv_name"
+            app:layout_constraintLeft_toRightOf="@+id/iv_logo"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+            app:layout_constraintTop_toTopOf="@+id/iv_logo"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{result.user.username}"
+            tools:text="@string/txt_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.internal.BaselineLayout
+            android:id="@+id/baseline_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+        <me.ray.common.ui.view.FontTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{result.title}"
+            android:textColor="@color/black25"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/baseline_layout"
+            app:typeface="FZLanD"
+            tools:text="@string/txt_test" />
+
+        <me.ray.common.ui.view.FontTextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{result.slugifiedName}"
+            android:textSize="@dimen/text_size_small"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:typeface="FZLanL"
+            tools:text="@string/txt_test" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

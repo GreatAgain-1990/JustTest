@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">JustTest</string>
+    <!--格式化时间戳-->
+    <string name="duration_format_hms">%02d:%02d:%02d</string>
+    <string name="duration_format_ms">%02d:%02d</string>
+    <string name="duration_format_s">%02d</string>
+
+    <string name="txt_test">测试测试测试测试测试测试测试菜市场长春市测试测试测试</string>
+    <string name="tip_network_error">网络错误\n点击屏幕重试</string>
+
+</resources>

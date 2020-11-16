@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JustTest</string>
+    <string name="main_splash">欢迎使用</string>
+    <string name="main_slogan">Welcome！</string>
+</resources>
