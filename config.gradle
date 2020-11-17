@@ -37,6 +37,8 @@ ext {
 
             //room
             room              : "androidx.room:room-runtime:2.2.5",
+            room_ktx          : "androidx.room:room-ktx:2.2.5",
+
 
             //图片加载
             glide             : 'com.github.bumptech.glide:glide:4.11.0'

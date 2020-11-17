@@ -61,11 +61,8 @@ class IndexViewModel(private val repository: IndexRepository) : BaseViewModel() 
         }, {
             _searchData.value = it.data.apiSearchV5?.results
 
-            Thread {
-                kotlin.run {
-                    repository.saveInDb(it.data.apiSearchV5)
-                }
-            }.start()
+            repository.saveInDb(it.data.apiSearchV5)
+
         }, onStart = {
             _onRefreshing.value = true
             _onError.value = false

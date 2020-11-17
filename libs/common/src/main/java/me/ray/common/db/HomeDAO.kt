@@ -13,9 +13,9 @@ import me.ray.common.model.ApiSearchV5
 @Dao
 interface HomeDAO {
     @Query("SELECT * FROM search")
-    fun getHomeData() : ApiSearchV5
+    suspend fun getHomeData(): ApiSearchV5
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun save(homePage: ApiSearchV5)
+    suspend fun save(homePage: ApiSearchV5)
 
 }

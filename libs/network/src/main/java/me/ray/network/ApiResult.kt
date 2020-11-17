@@ -34,7 +34,7 @@ suspend fun <T : Any> request(call: suspend () -> T, errorMsg: String): ApiResul
 @ExperimentalCoroutinesApi
 fun <T : Any> requestFlow(
     call: suspend () -> T,
-    onSuccess: (T) -> Unit,
+    onSuccess:suspend (T) -> Unit,
     onStart: () -> Unit = {},
     onComplete: () -> Unit = {},
     onError: (Throwable) -> Unit = {}

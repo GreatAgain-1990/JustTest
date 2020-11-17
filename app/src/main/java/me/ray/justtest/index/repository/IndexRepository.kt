@@ -13,9 +13,9 @@ class IndexRepository(private val apiService: Api,private  val homeDAO: HomeDAO)
 
     suspend fun fetchDiscovery(paramBody: RequestBody) = apiService.fetchSearch(paramBody)
 
-    fun getFromDb()=homeDAO.getHomeData()
+    suspend fun getFromDb()=homeDAO.getHomeData()
 
-    fun saveInDb(apiSearchV5: ApiSearchV5) = homeDAO.save(apiSearchV5)
+    suspend fun saveInDb(apiSearchV5: ApiSearchV5) = homeDAO.save(apiSearchV5)
 
 
 }
