@@ -10,6 +10,7 @@ import me.ray.utils.logi
 /**
  * Description: 判断滑动到底部rv
  * Author : ray
+ * 也可以用第三方框架实现，下拉刷新上拉加载的功能，这里采用自定义RecycleView ，滑到底部，触发请求的方式，简单实现
  */
 class BottomRecyclerView(context: Context, attributeSet: AttributeSet) :
     RecyclerView(context, attributeSet) {

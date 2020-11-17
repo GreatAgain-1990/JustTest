@@ -12,10 +12,10 @@ import retrofit2.http.POST
 interface Api {
 
     /**
-     * 获取首页-发现数据
+     * 搜索数据
      */
     @POST("_gateway/graphql")
-    suspend fun fetchDiscovery(@Body route: RequestBody): SearchData
+    suspend fun fetchSearch(@Body route: RequestBody): SearchData
 
 
 }

@@ -11,7 +11,7 @@ import okhttp3.RequestBody
  */
 class IndexRepository(private val apiService: Api,private  val homeDAO: HomeDAO) {
 
-    suspend fun fetchDiscovery(paramBody: RequestBody) = apiService.fetchDiscovery(paramBody)
+    suspend fun fetchDiscovery(paramBody: RequestBody) = apiService.fetchSearch(paramBody)
 
     fun getFromDb()=homeDAO.getHomeData()
 

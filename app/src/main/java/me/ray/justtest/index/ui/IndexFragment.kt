@@ -20,7 +20,7 @@ import me.ray.utils.logi
 import me.ray.utils.ui.decoration.MarginDecoration
 
 /**
- * Description: 发现
+ * Description: 首页
  * Author : ray
  */
 class IndexFragment : BaseFragment() {

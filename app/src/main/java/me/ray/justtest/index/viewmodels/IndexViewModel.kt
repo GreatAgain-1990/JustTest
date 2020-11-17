@@ -54,7 +54,8 @@ class IndexViewModel(private val repository: IndexRepository) : BaseViewModel() 
         )//将参数包装成RequestBody
 
         requestFlow({
-            logi("数据库：${repository.getFromDb()}")
+            logi("数据库数据：${repository.getFromDb()}")
+
             repository.fetchDiscovery(paramBody)
 
         }, {
